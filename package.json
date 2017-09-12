@@ -1,0 +1,28 @@
+{
+  "name": "todolist-ui",
+  "version": "0.0.1",
+  "description": "Web client for a simple todolist application.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "concurrently --kill-others 'http-server -a localhost -p 4200 -o -c1' 'webpack --watch'",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "Gustavo Diniz Monteiro",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "@uirouter/angularjs": "^1.0.6",
+    "angular-ui-router.statehelper": "^1.3.1",
+    "bulma": "0.5.2",
+    "http-server": "^0.10.0",
+    "webpack": "^3.5.6"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "css-loader": "^0.28.7",
+    "jshint": "^2.9.5",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2"
+  }
+}

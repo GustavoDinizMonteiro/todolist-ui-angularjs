@@ -1,0 +1,11 @@
+$colors: (
+  confirm:  blue,
+  positive: #3DDC75,
+  alert:    yellow,
+  default:  #4A4A4A,
+  danger:   red
+);
+
+.dark-background {
+  background-color: map-get($colors, default);
+}
