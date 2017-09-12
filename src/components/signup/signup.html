@@ -1,0 +1,47 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+
+    <div class="signup_component">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title has-text-centered">Criar conta</h2>
+
+          <div class="field">
+
+            <p class="td-label">NOME</p>
+            <p class="control in">
+              <input class="input td-input" type="text" ng-model="user.name" >
+            </p>
+
+            <p class="td-label">EMAIL</p>
+            <p class="control in">
+              <input class="input td-input" type="email" ng-model="user.email" 
+              placeholder="usuario@email.com" >
+            </p>
+
+            <p class="td-label">SENHA</p>
+            <p class="control in">
+              <input class="input td-input" type="password" ng-model="user.password" >
+            </p>
+
+            <p class="td-label">CONFIRMAR SENHA</p>
+            <p class="control in">
+              <input class="input td-input" type="password" ng-model="passwordConfirm" >
+            </p>
+
+            <div class="columns">
+              <div class="column">
+                <a class="button is-pulled-right td-confirm-btn" 
+                ng-class="{'is-static': !user.name || !user.email || !user.password || user.password != passwordConfirm}"
+                ng-click="submit(user)">Criar</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

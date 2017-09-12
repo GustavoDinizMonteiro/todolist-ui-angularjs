@@ -4,7 +4,7 @@ angular.module('todolistApp').controller('LoginController', function ($scope, $s
   })();
 
   $scope.signUp = () => {
-    $state.go('create-team');
+    $state.go('signup');
   };
 
   $scope.login = () => {

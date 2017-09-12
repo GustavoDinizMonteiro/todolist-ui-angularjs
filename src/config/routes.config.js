@@ -7,5 +7,12 @@ angular.module("todolistApp").config(function(stateHelperProvider, $urlRouterPro
       url: '/',
       templateUrl: 'src/components/login/login.html',
       controller: 'LoginController'
+    })
+    
+    .state({
+      name: 'signup',
+      url: '/singup',
+      templateUrl: 'src/components/signup/signup.html',
+      controller: 'SignUpController'
     });
 });
