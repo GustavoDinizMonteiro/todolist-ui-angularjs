@@ -1,11 +1,68 @@
 $colors: (
-  confirm:  blue,
+  confirm:  #4DA1FF,
+  confirm-hue: #C2DEFF,
   positive: #3DDC75,
-  alert:    yellow,
+  positive-hue: #9DEEB9,
+  alert:    #EF9D05,
+  alert-hue: #F2CE8A,
   default:  #4A4A4A,
-  danger:   red
+  default-hue: #939393,
+  danger:   #F11616,
+  danger-hue: #E79090
 );
 
-.dark-background {
-  background-color: map-get($colors, default);
+.hero {
+  background-color: map-get($colors, positive);
+}
+
+// Form elements
+
+$input-defs: (
+  input-border-color: #BDBDBD,
+  input-border-radius: 4px,
+  input-box-shadow: none
+);
+
+.td-input {
+  box-shadow: map_get($input-defs, input-box-shadow);
+  border-color: map_get($input-defs, input-border-color);
+  border-radius: map_get($input-defs, input-border-radius);
+  font-size: 14px;
+  &:focus{
+    border-color: map_get($colors, confirm);
+  }
+}
+
+.td-label{
+  font-size: 10px;
+}
+
+.button-shape{
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
+  &:hover{
+    color: #212121;
+  }
+}
+
+.td-confirm-btn{
+  @extend .button-shape;
+  background-color: map_get($colors, confirm);
+  border-color: map_get($colors, confirm-hue);
+  &:hover{
+    background-color: map_get($colors, confirm-hue);
+    border-color: map_get($colors, confirm);
+  }
+}
+
+.td-positive-btn{
+  @extend .button-shape;
+  background-color: map_get($colors, positive);
+  border-color: map_get($colors, positive-hue);
+  &:hover{
+    background-color: map_get($colors, positive-hue);
+    border-color: map_get($colors, positive);
+  }
 }

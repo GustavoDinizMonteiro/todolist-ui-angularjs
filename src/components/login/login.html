@@ -1,0 +1,49 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+
+    <div class="login_component">
+      <div class="card">
+        <div class="card-content">
+          <form class="field" ng-submit="login()">
+
+            <p class="td-label">EMAIL</p>
+            <p class="control in">
+              <input class="input" type="email" id="email" placeholder="usuario@email.com" 
+              name="email" ng-model="user.email" autofocus>
+            </p>
+
+
+            <p class="td-label">SENHA</p>
+            <p class="control in">
+              <input class="input" type="password" name="password" id="password" 
+              placeholder="Senha" ng-model="user.password" required>
+            </p>
+
+
+
+            <div class="columns">
+              <div class="column">
+                <button ng-class="{'is-static': !user.email || !user.password}" 
+                type="submit" class="button is-fullwidth 
+                td-positive-btn has-text-centered">LOGAR</button>
+              </div>
+            </div>
+
+            <div class="columns">
+              <div class="column">
+                <p style="font-size: 10px;" 
+                class="has-text-centered">Não está cadastrado ?</p>
+
+                <button type="submit" class="button is-fullwidth td-confirm-btn has-text-centered" 
+                ng-click="signUp()">INSCREVER-SE</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
