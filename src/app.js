@@ -9,3 +9,4 @@ require('./theme/theme.scss');
 // Controllers
 require('./components/login/login.controller.js');
 require('./components/signup/signup.controller.js');
+require('./components/dashboard/dashboard.controller.js');

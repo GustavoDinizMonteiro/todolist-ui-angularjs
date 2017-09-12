@@ -14,5 +14,12 @@ angular.module("todolistApp").config(function(stateHelperProvider, $urlRouterPro
       url: '/singup',
       templateUrl: 'src/components/signup/signup.html',
       controller: 'SignUpController'
+    })
+    
+    .state({
+      name: 'dashboard',
+      url: '/dashboard',
+      templateUrl: 'src/components/dashboard/dashboard.html',
+      controller: 'DashboardController'
     });
 });

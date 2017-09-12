@@ -1,0 +1,33 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+
+    <div class="login_component">
+      <div ng-repeat="task in tasks">
+        <div class="card">
+
+          <header class="card-header">
+            <div class="field">
+              <div class="control">
+                <p class="card-header-title">
+                  <label class="checkbox"><input type="checkbox"></label>
+                  {{task.name}}
+                </p>
+              </div>
+            </div>
+          </header>
+
+          <div class="card-content">
+            <div class="content">
+              <p>{{task.text}}</p>
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <a class="button is-danger is-fullwidth">Deletar</a>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
