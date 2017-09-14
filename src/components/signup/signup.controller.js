@@ -1,13 +1,20 @@
-angular.module('todolistApp').controller('SignUpController', function ($scope, $state) {
-  (() => {
-    // Main
-  })();
+(function () {
+  'use strict';
 
-  $scope.admin = {};
+  angular.module('todolistApp')
+    .controller('SignUpController', ['$scope', '$state', function ($scope, $state) {
 
-  $scope.submit = (user) => {
-    // Not implemented
+      (function main() {
+        // Main
+      })();
 
-    $state.go('dashboard');
-  };
-});
+      $scope.admin = {};
+
+      $scope.submit = function (user) {
+        // Not implemented
+
+        $state.go('dashboard');
+      };
+    }]);
+
+})();

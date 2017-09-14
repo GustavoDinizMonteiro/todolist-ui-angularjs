@@ -1,13 +1,20 @@
-angular.module('todolistApp').controller('LoginController', function ($scope, $state) {
-  (() => {
-    // Main
-  })();
+(function () {
+  'use strict';
+  
+  angular.module('todolistApp')
+    .controller('LoginController', ['$scope', '$state', function ($scope, $state) {
+      
+      (function main() {
+        // Main
+      })();
 
-  $scope.signUp = () => {
-    $state.go('signup');
-  };
+      $scope.signUp = function () {
+        $state.go('signup');
+      };
 
-  $scope.login = () => {
-    $state.go('dashboard');
-  };
-});
+      $scope.login = function () {
+        $state.go('dashboard');
+      };
+    }]);
+
+})();

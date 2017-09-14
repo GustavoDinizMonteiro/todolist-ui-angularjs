@@ -4,7 +4,7 @@
   "description": "Web client for a simple todolist application.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -p",
     "lint": "jshint --config ./.jshintrc --extract=auto src/; exit 0",
     "serve": "concurrently --kill-others 'http-server -a localhost -p 4200 -o -c1' 'webpack --watch'",
     "test": "echo \"Error: no test specified\" && exit 0"
