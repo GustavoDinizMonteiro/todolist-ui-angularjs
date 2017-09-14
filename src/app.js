@@ -10,3 +10,7 @@ require('./theme/theme.scss');
 require('./components/login/login.controller.js');
 require('./components/signup/signup.controller.js');
 require('./components/dashboard/dashboard.controller.js');
+
+// Services
+require('./components/login/authentication.service.js');
+require('./components/dashboard/user.service.js');
