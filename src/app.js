@@ -3,6 +3,9 @@ angular.module('todolistApp', ['ui.router', 'ui.router.stateHelper']);
 // Routes
 require('./config/routes.config.js');
 
+// Constants
+require('./config/constants.js');
+
 // Theme
 require('./theme/theme.scss');
 
@@ -12,5 +15,5 @@ require('./components/signup/signup.controller.js');
 require('./components/dashboard/dashboard.controller.js');
 
 // Services
-require('./components/login/authentication.service.js');
-require('./components/dashboard/user.service.js');
+require('./components/services/authentication.service.js');
+require('./components/services/user.service.js');

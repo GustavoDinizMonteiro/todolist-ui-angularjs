@@ -2,7 +2,7 @@
   <div class="hero-body">
 
     <div class="login_component">
-      <div ng-repeat="task in tasks">
+      <div ng-repeat="task in user.tasks">
         <div class="card">
 
           <header class="card-header">
@@ -10,7 +10,7 @@
               <div class="control">
                 <p class="card-header-title">
                   <label class="checkbox"><input type="checkbox"></label>
-                  {{task.name}}
+                  {{task.title}}
                 </p>
               </div>
             </div>

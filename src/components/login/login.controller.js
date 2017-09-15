@@ -2,26 +2,23 @@
   'use strict';
 
   angular.module('todolistApp')
-    .controller('LoginController', ['$scope', '$state', 'AuthenticationService', function ($scope, $state, AuthenticationService) {
+    .controller('LoginController', ['$scope', '$state', 'AuthenticationService',
+      function ($scope, $state, AuthenticationService) {
+        
+        $scope.user = {};
 
-      (function main() {
-        // Main
-      })();
+        $scope.signUp = function () {
+          $state.go('signup');
+        };
 
-      $scope.user = {};
+        $scope.login = function () {
+          AuthenticationService.login($scope.user, function (success) {
+            if (success) {
+              $state.go('dashboard');
+            }
+          });
+        };
 
-      $scope.signUp = function () {
-        $state.go('signup');
-      };
-
-      $scope.login = function () {
-        AuthenticationService.login($scope.user, function (success) {
-          if (success) {
-            $state.go('dashboard');
-          }
-        });
-      };
-
-    }]);
-
+      }
+    ]);
 })();

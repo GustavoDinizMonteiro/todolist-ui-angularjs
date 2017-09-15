@@ -2,19 +2,18 @@
   'use strict';
 
   angular.module('todolistApp')
-    .controller('SignUpController', ['$scope', '$state', function ($scope, $state) {
+    .controller('SignUpController', ['$scope', '$state', 'UserService',
+      function ($scope, $state, UserService) {
 
-      (function main() {
-        // Main
-      })();
+        $scope.admin = {};
 
-      $scope.admin = {};
-
-      $scope.submit = function (user) {
-        // Not implemented
-
-        $state.go('dashboard');
-      };
-    }]);
-
+        $scope.submit = function (user) {
+          UserService.createUser(user, function (success) {
+            if (success) {
+              $state.go('login');
+            }
+          });
+        };
+      }
+    ]);
 })();

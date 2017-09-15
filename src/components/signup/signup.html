@@ -21,7 +21,7 @@
 
             <p class="td-label">SENHA</p>
             <p class="control in">
-              <input class="input td-input" type="password" ng-model="user.password" >
+              <input class="input td-input" type="password" ng-model="user.password_digest" >
             </p>
 
             <p class="td-label">CONFIRMAR SENHA</p>
@@ -32,7 +32,7 @@
             <div class="columns">
               <div class="column">
                 <a class="button is-pulled-right td-confirm-btn" 
-                ng-class="{'is-static': !user.name || !user.email || !user.password || user.password != passwordConfirm}"
+                ng-class="{'is-static': !user.name || !user.email || !user.password_digest || user.password_digest != passwordConfirm}"
                 ng-click="submit(user)">Criar</a>
               </div>
             </div>
