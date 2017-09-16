@@ -1,17 +1,26 @@
 .login_component {
-    .card {
-      margin: 15px 0px;
-    }
+  .card {
+    margin: 15px 0px;
+  }
 
-    .task-title {
-      margin-left: 5px;
-    }
+  .task-title {
+    margin-left: 5px;
+  }
 
-    .button {
-      margin: 5px;
-    }
+  .button {
+    margin: 5px;
+  }
 
-    .checkbox {
-        margin-right: 10px;
-    }
+  .checkbox {
+      margin-right: 10px;
+  }
+}
+
+#new {
+  margin-top: 20px;
+  padding: 10px;
+  &:hover {
+    background-color: white;
+    color: map-get($colors, confirm);
+  }
 }

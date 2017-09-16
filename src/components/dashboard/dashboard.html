@@ -1,16 +1,19 @@
 <section class="hero is-fullheight">
+  <navbar></navbar>
   <div class="hero-body">
 
     <div class="login_component">
+      <div class="control">
+        <button class="button is-danger" id="new" ng-click="openModal()">Nova Tarefa</button>
+      </div>
       <div ng-repeat="task in user.tasks">
-        <div class="card">
 
+        <div class="card">
           <header class="card-header">
             <div class="field">
               <div class="control">
                 <p class="card-header-title">
-                  <label class="checkbox"><input type="checkbox"></label>
-                  {{task.title}}
+                  <label class="checkbox"><input type="checkbox"></label> {{task.title}}
                 </p>
               </div>
             </div>
@@ -23,11 +26,38 @@
           </div>
 
           <footer class="card-footer">
-            <a class="button is-danger is-fullwidth">Deletar</a>
+            <a class="button is-danger is-fullwidth" ng-click="deleteTask(task.id)">Deletar</a>
           </footer>
+
+          <div class="modal" ng-class="{'is-active': modalActive}">
+
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title has-text-centered">Crie uma task</p>
+                <button class="delete" aria-label="close" ng-click="closeModal()"></button>
+              </header>
+              <section class="modal-card-body">
+                <form class="field" ng-submit="createTask()">
+
+                  <p class="td-label">TITULO</p>
+                  <p class="control in">
+                    <input class="input" type="text" ng-model="newTask.title" placeholder="DE UM TITULO A SUA TASK">
+                  </p>
+
+                  <p class="control in">
+                    <textarea class="textarea" ng-model="newTask.text" placeholder="ADICIONE UMA DESCRICAO"></textarea>
+                  </p>
+
+                  <button type="submit" class="button is-fullwidth is-primary has-text-centered">CRIAR</button>
+                </form>
+              </section>
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
   </div>
+
 </section>

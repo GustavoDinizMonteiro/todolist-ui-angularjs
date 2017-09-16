@@ -17,3 +17,7 @@ require('./components/dashboard/dashboard.controller.js');
 // Services
 require('./components/services/authentication.service.js');
 require('./components/services/user.service.js');
+require('./components/services/task.service.js');
+
+// Directives
+require('./components/directives/navbar/navbar.directive.js');

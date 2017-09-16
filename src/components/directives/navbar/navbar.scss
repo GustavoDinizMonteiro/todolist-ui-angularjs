@@ -1,0 +1,19 @@
+.level {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+}
+
+#navbar_directive {
+  background-color: white;
+  .item {
+    color: map_get($colors, danger-hue);
+    padding: 5px;
+    border: 1px map_get($colors, danger) solid;
+    &:hover {
+      color: white;
+      background-color: map_get($colors, danger);
+    }
+  }
+}
