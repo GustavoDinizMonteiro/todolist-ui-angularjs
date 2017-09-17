@@ -1,0 +1,25 @@
+<div class="modal" ng-class="{'is-active': modalActive}">
+
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title has-text-centered">Crie uma task</p>
+      <button class="delete" aria-label="close" ng-click="closeModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <form class="field" ng-submit="createTask()">
+
+        <p class="td-label">TITULO</p>
+        <p class="control in">
+          <input class="input" type="text" ng-model="newTask.title" placeholder="DE UM TITULO A SUA TASK">
+        </p>
+
+        <p class="control in">
+          <textarea class="textarea" ng-model="newTask.text" placeholder="ADICIONE UMA DESCRICAO"></textarea>
+        </p>
+
+        <button type="submit" class="button is-fullwidth is-primary has-text-centered">CRIAR</button>
+      </form>
+    </section>
+  </div>
+</div>
