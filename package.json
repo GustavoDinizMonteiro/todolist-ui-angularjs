@@ -8,7 +8,7 @@
     "doc": "jsdoc -c ./jsdoc.conf.json",
     "lint": "jshint --config ./.jshintrc --extract=auto src/; exit 0",
     "serve": "concurrently --kill-others 'http-server -a localhost -p 4200 -o -c1' 'webpack --watch'",
-    "start": "http-server -p 4200",
+    "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "Gustavo Diniz Monteiro",
@@ -16,18 +16,19 @@
     "@uirouter/angularjs": "^1.0.6",
     "angular": "^1.6.6",
     "angular-ui-router.statehelper": "^1.3.1",
-    "bulma": "^0.5.2"
-  },
-  "devDependencies": {
-    "concurrently": "^3.5.0",
+    "bulma": "^0.5.2",
     "css-loader": "^0.28.7",
-    "http-server": "^0.10.0",
-    "jsdoc": "^3.5.5",
-    "jshint": "^2.9.5",
+    "express": "^4.15.4",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "http-server": "^0.10.0",
+    "jsdoc": "^3.5.5",
+    "jshint": "^2.9.5"
   },
   "repository": "https://github.com/GustavoDinizMonteiro/todolist-ui-angularjs.git",
   "license": "None",
