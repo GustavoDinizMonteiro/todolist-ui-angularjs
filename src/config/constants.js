@@ -13,13 +13,15 @@ angular.module('todolistApp')
     "CREATE_USER_SUCCESS": "User was successfully created.",
     "LOGIN_FAIL": "Incorrect email or password.",
     "CREATE_TASK_SUCCESS": "A new task was successfully created.",
-    "DELETE_TASK_SUCCESS": "Task was successfully deleted."    
+    "DELETE_TASK_SUCCESS": "Task was successfully deleted.",    
+    "DELETE_TAG_SUCCESS": "Tag was successfully deleted."
   })
 
   .constant("API_ENDPOINTS", {
     "LOGIN": "/authenticate",
     "USER": "/users/",
-    "TASK": "/tasks/"
+    "TASK": "/tasks/",
+    "TAG": "/tags/"
   })
   
   .constant("HTTP_CODES", {

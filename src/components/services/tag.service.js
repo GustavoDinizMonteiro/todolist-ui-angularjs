@@ -2,20 +2,20 @@
   'use strict';
 
   angular.module('todolistApp')
-    .factory('TaskService', ['$http', '$window', 'HTTP_CONSTANTS',
+    .factory('TagService', ['$http', '$window', 'HTTP_CONSTANTS',
       'API_ENDPOINTS', 'MESSAGES', Service]);
 
   function Service($http, $window, HTTP_CONSTANTS, API_ENDPOINTS, MESSAGES) {
     var service = {};
-    service.createTask = createTask;
-    service.deleteTask = deleteTask;
+    service.createTag = createTag;
+    service.deleteTag = deleteTag;
 
     return service;
 
-    function createTask(task, callback) {
+    function createTag(tag, callback) {
       var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK;
 
-      task.user_id = $window.localStorage.userId;
+      tag.user_id = $window.localStorage.userId;
       $http.post(url, task).then(success, err);
 
       function success(response) {
@@ -29,13 +29,13 @@
 
     }
 
-    function deleteTask(taskId, callback) {
-      var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK + taskId;
+    function deleteTag(tagId, callback) {
+      var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TAG + tagId;
 
       $http.delete(url).then(success, err);
 
       function success(response) {
-        console.log(MESSAGES.DELETE_TAG_SUCCESS);
+        console.log(MESSAGES.DELETE_TASK_SUCCESS);
         callback(true);
       }
 

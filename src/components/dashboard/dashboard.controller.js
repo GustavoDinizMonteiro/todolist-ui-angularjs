@@ -4,8 +4,8 @@
    * @module dashboard
    */
   angular.module('todolistApp')
-    .controller('DashboardController', ['$scope', 'UserService', 'TaskService',
-      function ($scope, UserService, TaskService) {
+    .controller('DashboardController', ['$scope', 'UserService', 'TaskService', 'TagService',
+      function ($scope, UserService, TaskService, TagService) {
         $scope.user = {};
 
         $scope.modalActive = false;
@@ -50,14 +50,37 @@
         };
 
         /**
-         * Delete selected task by task id.
+         * Delete selected task by id.
          * @param {number} taskId - Id of selected task.
-         * @method deleTask
+         * @method deleteTask
          */
         $scope.deleteTask = function (taskId) {
           TaskService.deleteTask(taskId, function (success) {
             if (success) {
-              $scope.user.tasks = $scope.user.tasks.filter(function (task) { return task.id != taskId;});
+              $scope.user.tasks = $scope.user.tasks.filter(function (task) { return task.id !== taskId; });
+            }
+          });
+        };
+
+        /**
+         * Filter through tags related to a task by id.
+         * @param {number} taskId - Id of task.
+         * @method getTags
+         * @returns {Array<Object>} Returns all tags related to the task id.
+         */
+        $scope.getTags = function (taskId) {
+          return $scope.user.tags.filter(function (tag) { return tag.task_id === taskId; });
+        };
+
+        /**
+         * Delete selected tag by id.
+         * @param {number} tagId - Id of tag.
+         * @method deleteTag
+         */
+        $scope.deleteTag = function (tagId) {
+          TagService.deleteTag(tagId, function (success) {
+            if (success) {
+              $scope.user.tags = $scope.user.tags.filter(function (tag) { return tag.id !== tagId; });
             }
           });
         };
