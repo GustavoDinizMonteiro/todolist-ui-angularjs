@@ -8,8 +8,10 @@
       function ($scope, UserService, TaskService, TagService) {
         $scope.user = {};
 
-        $scope.modalActive = false;
+        $scope.taskModalActive = false;
+        $scope.tagModalActive = false;
         $scope.newTask = { finished: false };
+        $scope.newTag = {};
 
         (function main() {
           UserService.getUser(function (data) {
@@ -20,19 +22,19 @@
         })();
 
         /**
-         * @description Open the task creation modal.
-         * @method openModal
+         * Open the task creation modal.
+         * @method openTaskModal
          */
-        $scope.openModal = function () {
-          $scope.modalActive = true;
+        $scope.openTaskModal = function () {
+          $scope.taskModalActive = true;
         };
 
         /**
          * Close the task creation modal.
-         * @method closeModal
+         * @method closeTaskModal
          */
-        $scope.closeModal = function () {
-          $scope.modalActive = false;
+        $scope.closeTaskModal = function () {
+          $scope.taskModalActive = false;
         };
 
         /**
@@ -44,7 +46,7 @@
             if (data) {
               $scope.user.tasks.push(data);
               $scope.newTask = { finished: false };
-              $scope.modalActive = false;
+              $scope.taskModalActive = false;
             }
           });
         };
@@ -73,6 +75,22 @@
         };
 
         /**
+         * Create a new tag with the name passed in the modal of creating tasgs.
+         * @method createTag
+         */
+        $scope.createTag = function () {
+          if ($scope.newTag.name) {
+            TagService.createTag($scope.newTag, function (data) {
+              if (data) {
+                $scope.user.tags.push(data);
+                $scope.newTag = {};
+                $scope.tagModalActive = false;
+              }
+            });
+          }
+        };
+
+        /**
          * Delete selected tag by id.
          * @param {number} tagId - Id of tag.
          * @method deleteTag
@@ -83,6 +101,24 @@
               $scope.user.tags = $scope.user.tags.filter(function (tag) { return tag.id !== tagId; });
             }
           });
+        };
+
+        /**
+         * Open the tag creation modal.
+         * @method openTagModal
+         * @param {number} taskId - Id of task.
+         */
+        $scope.openTagModal = function (taskId) {
+          $scope.tagModalActive = true;
+          $scope.newTag.task_id = taskId;
+        };
+
+        /**
+         * Close the tag creation modal.
+         * @method closeTagModal
+         */
+        $scope.closeTagModal = function () {
+          $scope.tagModalActive = false;
         };
       }
     ]);

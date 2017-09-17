@@ -13,13 +13,13 @@
     return service;
 
     function createTag(tag, callback) {
-      var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK;
+      var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TAG;
 
       tag.user_id = $window.localStorage.userId;
-      $http.post(url, task).then(success, err);
+      $http.post(url, tag).then(success, err);
 
       function success(response) {
-        console.log(MESSAGES.CREATE_TASK_SUCCESS);
+        console.log(MESSAGES.CREATE_TAG_SUCCESS);
         callback(response.data);
       }
 

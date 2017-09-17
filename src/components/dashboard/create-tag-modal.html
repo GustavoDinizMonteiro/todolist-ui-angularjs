@@ -1,0 +1,21 @@
+<div class="modal" ng-class="{'is-active': tagModalActive}">
+
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title has-text-centered">Crie uma tag</p>
+      <button class="delete" aria-label="close" ng-click="closeTagModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <form class="field" ng-submit="createTag()">
+
+        <p class="td-label">NOME DA TAG</p>
+        <p class="control in">
+          <input class="input" type="text" ng-model="newTag.name" placeholder="DE UM NOME A TAG">
+        </p>
+
+        <button type="submit" class="button is-fullwidth is-primary has-text-centered">CRIAR</button>
+      </form>
+    </section>
+  </div>
+</div>

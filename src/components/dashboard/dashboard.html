@@ -4,7 +4,7 @@
 
     <div class="login_component">
       <div class="control">
-        <button class="button is-danger" id="new" ng-click="openModal()">Nova Tarefa</button>
+        <button class="button is-danger" id="new" ng-click="openTaskModal()">Nova Tarefa</button>
       </div>
       <div ng-repeat="task in user.tasks">
 
@@ -38,12 +38,14 @@
 
           <footer class="card-footer">
             <a class="button is-danger" ng-click="deleteTask(task.id)">Deletar</a>
+            <a class="button is-info" ng-click="openTagModal(task.id)">Adicionar tag</a>
           </footer>
 
         </div>
       </div>
 
       <div ng-include="'src/components/dashboard/create-task-modal.html'"></div>
+      <div ng-include="'src/components/dashboard/create-tag-modal.html'"></div>
     </div>
   </div>
 

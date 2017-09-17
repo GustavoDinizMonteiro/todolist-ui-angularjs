@@ -1,10 +1,10 @@
-<div class="modal" ng-class="{'is-active': modalActive}">
+<div class="modal" ng-class="{'is-active': taskModalActive}">
 
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title has-text-centered">Crie uma task</p>
-      <button class="delete" aria-label="close" ng-click="closeModal()"></button>
+      <button class="delete" aria-label="close" ng-click="closeTaskModal()"></button>
     </header>
     <section class="modal-card-body">
       <form class="field" ng-submit="createTask()">
