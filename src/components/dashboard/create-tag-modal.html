@@ -6,7 +6,20 @@
       <p class="modal-card-title has-text-centered">Crie uma tag</p>
       <button class="delete" aria-label="close" ng-click="closeTagModal()"></button>
     </header>
+
     <section class="modal-card-body">
+
+      <div class="content">
+        <p class="has-text-centered">Ou adicione uma que vc já usa.</p>
+        <div class="field is-grouped is-grouped-multiline">
+          <div class="control" ng-repeat="tag in user.tags">
+            <div class="tags has-addons">
+              <span class="tag is-info">{{tag.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <form class="field" ng-submit="createTag()">
 
         <p class="td-label">NOME DA TAG</p>

@@ -15,14 +15,16 @@ angular.module('todolistApp')
     "CREATE_TASK_SUCCESS": "A new task was successfully created.",
     "DELETE_TASK_SUCCESS": "Task was successfully deleted.",    
     "CREATE_TAG_SUCCESS": "Task was successfully created.",
-    "DELETE_TAG_SUCCESS": "Tag was successfully deleted."
+    "DELETE_TAG_SUCCESS": "Tag was successfully deleted.",
+    "CREATE_RELATION_SUCCESS": "Successfully created a new relation between a task and a tag."
   })
 
   .constant("API_ENDPOINTS", {
     "LOGIN": "/authenticate",
     "USER": "/users/",
     "TASK": "/tasks/",
-    "TAG": "/tags/"
+    "TAG": "/tags/",
+    "TASK_TAG": "/tasks_tags"
   })
   
   .constant("HTTP_CODES", {

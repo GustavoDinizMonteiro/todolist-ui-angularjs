@@ -9,6 +9,7 @@
     var service = {};
     service.createTag = createTag;
     service.deleteTag = deleteTag;
+    service.createRelation = createRelation;
 
     return service;
 
@@ -37,6 +38,23 @@
       function success(response) {
         console.log(MESSAGES.DELETE_TASK_SUCCESS);
         callback(true);
+      }
+
+      function err(err) {
+        callback(false);
+      }
+
+    }
+
+    function createRelation(relation, callback) {
+      var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK_TAG;
+      
+      relation.user_id = $window.localStorage.userId;
+      $http.post(url, relation).then(success, err);
+
+      function success(response) {
+        console.log(MESSAGES.CREATE_RELATION_SUCCESS);
+        callback(response.data);
       }
 
       function err(err) {

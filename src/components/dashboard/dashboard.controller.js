@@ -12,6 +12,7 @@
         $scope.tagModalActive = false;
         $scope.newTask = { finished: false };
         $scope.newTag = {};
+        $scope.newRelation = {};
 
         (function main() {
           UserService.getUser(function (data) {
@@ -71,7 +72,9 @@
          * @returns {Array<Object>} Returns all tags related to the task id.
          */
         $scope.getTags = function (taskId) {
-          return $scope.user.tags.filter(function (tag) { return tag.task_id === taskId; });
+          var relations = $scope.user.relations.filter(function (r) { return r.task_id === taskId; });
+          var relarionsId = relations.map(function (r) { return r.tag_id });
+          return $scope.user.tags.filter(function (tag) { return relarionsId.includes(tag.id) });
         };
 
         /**
@@ -82,9 +85,18 @@
           if ($scope.newTag.name) {
             TagService.createTag($scope.newTag, function (data) {
               if (data) {
-                $scope.user.tags.push(data);
-                $scope.newTag = {};
-                $scope.tagModalActive = false;
+                $scope.newRelation.tag_id = data.id;
+                TagService.createRelation($scope.newRelation, function (success) {
+                  if (success) {
+                    $scope.user.tags.push(data);
+                    $scope.user.relations.push(success);
+
+                    $scope.newTag = {};
+                    $scope.newRelation = {};
+
+                    $scope.tagModalActive = false;
+                  }
+                });
               }
             });
           }
@@ -110,7 +122,7 @@
          */
         $scope.openTagModal = function (taskId) {
           $scope.tagModalActive = true;
-          $scope.newTag.task_id = taskId;
+          $scope.newRelation.task_id = taskId;
         };
 
         /**
