@@ -132,6 +132,22 @@
         $scope.closeTagModal = function () {
           $scope.tagModalActive = false;
         };
+
+        /**
+         * Add a tag already exists to a task.
+         * @param {number} tagId - Id of tag.
+         * @method addTag
+         */
+        $scope.addTag = function (tagId) {
+          $scope.newRelation.tag_id = tagId;
+          TagService.createRelation($scope.newRelation, function(data){
+            if (data) {
+              $scope.user.relations.push(data);
+              $scope.newRelation = {};
+              $scope.tagModalActive = false;
+            }
+          });
+        };
       }
     ]);
 })();

@@ -13,7 +13,7 @@
         <p class="has-text-centered">Ou adicione uma que vc já usa.</p>
         <div class="field is-grouped is-grouped-multiline">
           <div class="control" ng-repeat="tag in user.tags">
-            <div class="tags has-addons">
+            <div class="tags has-addons" ng-click="addTag(tag.id)">
               <span class="tag is-info">{{tag.name}}</span>
             </div>
           </div>
