@@ -7,7 +7,7 @@
     "build": "webpack -p --progress",
     "doc": "jsdoc -c ./jsdoc.conf.json",
     "lint": "jshint --config ./.jshintrc --extract=auto src/; exit 0",
-    "serve": "concurrently --kill-others 'http-server -a localhost -p 4200 -o -c1' 'webpack --watch'",
+    "serve": "concurrently --kill-others 'http-server -a localhost -p 8100 -o -c1' 'webpack --watch'",
     "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },

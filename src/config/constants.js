@@ -2,9 +2,10 @@ angular.module('todolistApp')
 
   .constant("HTTP_CONSTANTS", {
     // DEV
-    "API": "http://localhost:3000"
+    //"API": "http://localhost:3000",
 
     // PROD
+    "API": "https://simple-todolist-api.herokuapp.com"
   })
 
   .constant("MESSAGES", {
