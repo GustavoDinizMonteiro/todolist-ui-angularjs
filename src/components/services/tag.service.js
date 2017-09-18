@@ -6,10 +6,11 @@
       'API_ENDPOINTS', 'MESSAGES', Service]);
 
   function Service($http, $window, HTTP_CONSTANTS, API_ENDPOINTS, MESSAGES) {
-    var service = {};
-    service.createTag = createTag;
-    service.deleteTag = deleteTag;
-    service.createRelation = createRelation;
+    var service = {
+      createTag: createTag,
+      deleteTag: deleteTag,
+      createRelation: createRelation
+    };
 
     return service;
 

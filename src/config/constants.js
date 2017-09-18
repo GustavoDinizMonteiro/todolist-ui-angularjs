@@ -14,6 +14,7 @@ angular.module('todolistApp')
     "LOGIN_FAIL": "Incorrect email or password.",
     "CREATE_TASK_SUCCESS": "A new task was successfully created.",
     "DELETE_TASK_SUCCESS": "Task was successfully deleted.",    
+    "UPDATE_TASK_SUCCESS": "Task was successfully updated.",
     "CREATE_TAG_SUCCESS": "Task was successfully created.",
     "DELETE_TAG_SUCCESS": "Tag was successfully deleted.",
     "CREATE_RELATION_SUCCESS": "Successfully created a new relation between a task and a tag."

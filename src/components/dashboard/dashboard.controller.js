@@ -10,6 +10,7 @@
 
         $scope.taskModalActive = false;
         $scope.tagModalActive = false;
+        
         $scope.newTask = { finished: false };
         $scope.newTag = {};
         $scope.newRelation = {};
@@ -140,7 +141,7 @@
          */
         $scope.addTag = function (tagId) {
           $scope.newRelation.tag_id = tagId;
-          TagService.createRelation($scope.newRelation, function(data){
+          TagService.createRelation($scope.newRelation, function (data) {
             if (data) {
               $scope.user.relations.push(data);
               $scope.newRelation = {};
@@ -148,6 +149,22 @@
             }
           });
         };
+
+        /**
+         * Mark a task as done.
+         * @param {object} task - Task que será marcada como finalizada.
+         * @method markAsDone
+         */
+        $scope.markAsDone = function (task) {
+          if (!task.finished) {
+            task.finished = true;
+            TaskService.patchTask(task, function (success) {
+              if (!success) {
+                task.finished = false;
+              }
+            });
+          }
+        }
       }
     ]);
 })();
