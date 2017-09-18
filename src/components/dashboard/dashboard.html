@@ -12,8 +12,10 @@
           <header class="card-header">
             <div class="field">
               <div class="control">
+                <span class="tag is-success mark" ng-show="task.finished">TEAMINADO</span>
+                <span class="tag is-danger mark" ng-show="!task.finished">PENDENTE</span>                
                 <p class="card-header-title">
-                  <label class="checkbox"><input type="checkbox"></label> {{task.title}}
+                  {{task.title}}
                 </p>
               </div>
             </div>
@@ -39,6 +41,7 @@
           <footer class="card-footer">
             <a class="button is-danger" ng-click="deleteTask(task.id)">Deletar</a>
             <a class="button is-info" ng-click="openTagModal(task.id)">Adicionar tag</a>
+            <a class="button is-success" ng-click="markAsDone(task)">Terminado</a>
           </footer>
 
         </div>
