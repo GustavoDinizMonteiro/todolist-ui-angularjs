@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   /**
-   * @module singUp
+   * @module SignUpController
    */
   angular.module('todolistApp')
     .controller('SignUpController', ['$scope', '$state', 'UserService',

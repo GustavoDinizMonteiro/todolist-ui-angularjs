@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   /**
-   * @module login
+   * @module LoginController
    */
   angular.module('todolistApp')
     .controller('LoginController', ['$scope', '$state', 'AuthenticationService',

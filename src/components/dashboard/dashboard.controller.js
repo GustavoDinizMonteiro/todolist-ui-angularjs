@@ -1,7 +1,9 @@
 (function () {
   'use strict';
   /**
-   * @module dashboard
+   * User actions controller, how to create and delete 
+   * tasks, assign tags and mark tasks as done.
+   * @module DashboardController
    */
   angular.module('todolistApp')
     .controller('DashboardController', ['$scope', 'UserService', 'TaskService', 'TagService',
@@ -15,6 +17,10 @@
         $scope.newTag = {};
         $scope.newRelation = {};
 
+        /**
+         * Get user data when the module is instantiated.
+         * @method main
+         */
         (function main() {
           UserService.getUser(function (data) {
             if (data) {

@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-
+  
   angular.module('todolistApp')
     .directive('navbar', ['$state', '$window', '$rootScope',
       function ($state, $window, $rootScope) {

@@ -1,6 +1,9 @@
 (function () {
   'use strict';
-
+  /**
+   * Task data service.
+   * @module TaskService
+   */
   angular.module('todolistApp')
     .factory('TaskService', ['$http', '$window', 'HTTP_CONSTANTS',
       'API_ENDPOINTS', 'MESSAGES', Service]);
@@ -14,6 +17,12 @@
 
     return service;
 
+    /**
+     * Create a task for the user whose id is saved in the local memory.
+     * @param {object} task - Task data with title, text and finished status of task.
+     * @param {function} callback - callback function.
+     * @method createTask
+     */
     function createTask(task, callback) {
       var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK;
 
@@ -31,6 +40,12 @@
 
     }
 
+    /**
+     * Delete a task by id passed.
+     * @param {number} taskId - Id of task.
+     * @param {function} callback - Callback function.
+     * @method deleteTask
+     */
     function deleteTask(taskId, callback) {
       var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK + taskId;
 
@@ -47,6 +62,12 @@
 
     }
 
+    /**
+     * Update a tag passed.
+     * @param {object} task - Task data with title, text and finished status of task.
+     * @param {function} callback - Callback function.
+     * @method patchTag 
+     */
     function patchTask(task, callback) {
       var url = HTTP_CONSTANTS.API + API_ENDPOINTS.TASK + task.id;
 

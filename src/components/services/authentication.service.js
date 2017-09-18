@@ -1,6 +1,9 @@
 (function () {
   'use strict';
-
+  /**
+   * User authentication service.
+   * @module AuthenticationService
+   */
   angular.module('todolistApp')
     .factory('AuthenticationService', ['$http', '$window', 'HTTP_CONSTANTS', 
                                         'API_ENDPOINTS', 'MESSAGES', 'HTTP_CODES', Service]);
@@ -11,6 +14,13 @@
 
     return service;
 
+    /**
+     * Perform the authentication of the user and in case it occurs 
+     * successfully save your id and authentication token in the local memory.
+     * @param {object} user - User data with email and password of user.
+     * @param {function} callback - Callback function.
+     * @method login
+     */
     function login(user, callback) {
       var url = HTTP_CONSTANTS.API + API_ENDPOINTS.LOGIN;
 
